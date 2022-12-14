@@ -1,4 +1,4 @@
-FROM python:3.10.8
+FROM python:3.10.5
 
 WORKDIR .
 RUN apt -qq update && apt -qq install -y git ffmpeg
