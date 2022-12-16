@@ -1,6 +1,15 @@
+
 [
   {
-    "name": "PORT",
+    "name": "CC_DOCKER_EXPOSED_HTTP_PORT",
     "value": "8080"
+  },
+  {
+    "name": "CC_DOCKERFILE",
+    "value": "Dockerfile"
+  },
+  {
+    "name": "CC_MOUNT_DOCKER_SOCKET",
+    "value": "True"
   }
 ]
