@@ -5,7 +5,7 @@ RUN apt -qq update && apt -qq install -y git ffmpeg
 COPY . .
 
 RUN pip3 install -r requirements.txt
-PORT 8080
+ENV 8080
 EXPOSE 8080
 
 CMD ["python3", "bot.py"]
