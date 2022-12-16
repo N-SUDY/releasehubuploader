@@ -4,7 +4,5 @@ services:
   app:
     build: .
     command: python3 bot.py
-    restart: on-failure
     ports:
       - "80:80"
-
