@@ -1,9 +1,4 @@
 version: "3"
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    command: ["python3", "bot.py", "dev-server-docker"]
+  app:
+    build: .
