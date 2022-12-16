@@ -1,5 +1,4 @@
 FROM python:3.10.5-slim-buster
-ENV 8080
 WORKDIR .
 RUN apt -qq update && apt -qq install -y git ffmpeg
 
