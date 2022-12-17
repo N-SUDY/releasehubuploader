@@ -1,21 +1,10 @@
-# Python Based Docker
 FROM python:latest
 
-# Installing Packages
-RUN apt update && apt upgrade -y
-RUN apt install git curl python3-pip ffmpeg -y
+WORKDIR .
+RUN apt -qq update && apt -qq install -y git ffmpeg
 
-# Updating Pip Packages
-RUN pip3 install -U pip
+COPY . .
 
-# Copying Requirements
-COPY requirements.txt /requirements.txt
+RUN pip3 install -r requirements.txt
 
-# Installing Requirements
-RUN cd /
-RUN pip3 install -U -r requirements.txt
-RUN mkdir /releasehubuploader
-WORKDIR /releasehubuploader
-
-# Running MessageSearchBot
-CMD ["python", "bot.py"]
+CMD ["python3", "bot.py"]
