@@ -1,9 +1,21 @@
-FROM python:3.10.5
-WORKDIR .
-RUN apt -qq update && apt -qq install -y git ffmpeg
+# Python Based Docker
+FROM python:latest
 
-COPY . .
+# Installing Packages
+RUN apt update && apt upgrade -y
+RUN apt install git curl python3-pip ffmpeg -y
 
-RUN pip3 install -r requirements.txt
+# Updating Pip Packages
+RUN pip3 install -U pip
 
-CMD ["python3", "bot.py"]
+# Copying Requirements
+COPY requirements.txt /requirements.txt
+
+# Installing Requirements
+RUN cd /
+RUN pip3 install -U -r requirements.txt
+RUN mkdir /releasehubuploader
+WORKDIR /releasehubuploader
+
+# Running MessageSearchBot
+CMD ["python", "bot.py"]
