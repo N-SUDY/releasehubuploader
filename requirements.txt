@@ -3,7 +3,7 @@ yt-dlp
 motor
 dnspython
 Pillow
-aiohttp
+#aiohttp
 hachoir
 requests
 tgcrypto
